@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل البركان - VolcanoPulse</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#da2e0b",
+                        "background-light": "#f8f6f5",
+                        "background-dark": "#221310",
+                        "surface-dark": "#2a1b18",
+                        "surface-light": "#ffffff",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans Arabic", "sans-serif"],
+                        "body": ["Noto Sans Arabic", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #221310; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #392b28; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #da2e0b; 
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(218, 46, 11, 0.2) 0%, rgba(218, 46, 11, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-body selection:bg-primary selection:text-white transition-colors duration-200">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-50 w-full border-b border-[#392b28] bg-background-dark/95 backdrop-blur supports-[backdrop-filter]:bg-background-dark/60">
+<div class="container mx-auto px-4 md:px-6">
+<div class="flex h-16 items-center justify-between">
+<div class="flex items-center gap-8">
+<a class="flex items-center gap-2 text-white transition-opacity hover:opacity-80" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">volcano</span>
+<h2 class="font-display text-xl font-bold tracking-tight">VolcanoPulse</h2>
+</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-white hover:text-primary transition-colors" href="#">الرئيسية</a>
+<a class="text-sm font-medium text-white hover:text-primary transition-colors" href="#">الخريطة العالمية</a>
+<a class="text-sm font-medium text-primary" href="#">التقارير</a>
+<a class="text-sm font-medium text-white hover:text-primary transition-colors" href="#">تنبيهات</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-[20px]">search</span>
+<input class="h-9 w-64 rounded-lg border-none bg-[#392b28] pr-10 pl-4 text-sm text-white placeholder:text-gray-400 focus:ring-1 focus:ring-primary" placeholder="بحث عن بركان..." type="search"/>
+</div>
+<button class="rounded-full bg-[#392b28] p-2 hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-white text-[24px]">notifications</span>
+</button>
+<button class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-red-700 transition-colors shadow-lg shadow-primary/20">
+                        تصدير البيانات
+                    </button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 py-8">
+<div class="container mx-auto px-4 md:px-6 max-w-7xl">
+<nav class="flex mb-6 text-sm font-medium text-gray-400">
+<ol class="flex items-center gap-2">
+<li><a class="hover:text-primary transition-colors" href="#">الرئيسية</a></li>
+<li><span class="text-gray-600">/</span></li>
+<li><a class="hover:text-primary transition-colors" href="#">البراكين</a></li>
+<li><span class="text-gray-600">/</span></li>
+<li aria-current="page" class="text-white">جبل إتنا</li>
+</ol>
+</nav>
+<div class="relative mb-8 overflow-hidden rounded-xl bg-surface-dark border border-[#392b28] shadow-2xl">
+<div class="absolute inset-0 z-0">
+<div class="h-full w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvc25YT3JWTYwfwCyiFenCIxnPDznHKf1diNukSmqljdLNPkJJyxLbd8BVMg6o1pudjPN48qwSlsJhbIQ5WyBS-nwqw-CONRyFONLmlEHlD-JOYkqIuS2y4MZvExPW3gFWhssx3nVQPEflVNl0eex6ebNzk2FqI4DGN0MTDdZaCKy2cPlBb2CR3fmfKuRmYrRr0HtVKnCWZNU-AKTlNbNDPqIHcG5_289GObiCYf5xdoaOmfHpvVI6YpJrqIePxu_Ujk2zebtrBNzW');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-[#221310] via-[#221310]/80 to-transparent"></div>
+</div>
+<div class="relative z-10 flex flex-col justify-end p-6 md:p-10 min-h-[300px]">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="mb-2 flex items-center gap-3">
+<span class="inline-flex items-center rounded-full bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-500 ring-1 ring-inset ring-orange-500/20">
+<span class="mr-1.5 h-2 w-2 rounded-full bg-orange-500 animate-pulse"></span>
+                                    مستوى الخطر: برتقالي
+                                </span>
+<span class="inline-flex items-center rounded-full bg-[#392b28] px-3 py-1 text-xs font-medium text-gray-300">
+                                    تحديث: قبل 12 دقيقة
+                                </span>
+</div>
+<h1 class="font-display text-4xl md:text-5xl font-bold text-white mb-2">جبل إتنا (Mount Etna)</h1>
+<p class="text-gray-300 max-w-2xl text-lg">صقلية، إيطاليا • 37.751° N, 14.995° E • بركان طبقي</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-red-700 transition-colors shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                                تحميل التقرير PDF
+                            </button>
+<button class="flex items-center gap-2 rounded-lg bg-[#392b28] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#4a3b38] transition-colors border border-gray-700">
+<span class="material-symbols-outlined text-[20px]">share</span>
+                                مشاركة
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+<div class="relative overflow-hidden rounded-xl bg-surface-dark border border-[#392b28] p-5 hover:border-primary/50 transition-colors group">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-medium text-gray-400">احتمالية الانفجار</p>
+<h3 class="text-3xl font-bold text-white font-display mt-1">85%</h3>
+</div>
+<span class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">warning</span>
+</span>
+</div>
+<div class="flex items-center gap-1 text-xs">
+<span class="text-red-500 flex items-center font-bold bg-red-500/10 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                            +12%
+                        </span>
+<span class="text-gray-500 mr-2">مقارنة بالأسبوع الماضي</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-[#392b28]">
+<div class="h-full bg-primary" style="width: 85%"></div>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-dark border border-[#392b28] p-5 hover:border-gray-600 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-medium text-gray-400">انبعاثات SO2</p>
+<h3 class="text-3xl font-bold text-white font-display mt-1">450 <span class="text-sm font-normal text-gray-500">طن/يوم</span></h3>
+</div>
+<span class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#392b28] text-gray-300">
+<span class="material-symbols-outlined">air</span>
+</span>
+</div>
+<div class="flex items-center gap-1 text-xs">
+<span class="text-orange-500 flex items-center font-bold bg-orange-500/10 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>
+                            +5%
+                        </span>
+<span class="text-gray-500 mr-2">نشاط متوسط</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-dark border border-[#392b28] p-5 hover:border-gray-600 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-medium text-gray-400">الضغط الداخلي</p>
+<h3 class="text-3xl font-bold text-white font-display mt-1">145 <span class="text-sm font-normal text-gray-500">MPa</span></h3>
+</div>
+<span class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#392b28] text-gray-300">
+<span class="material-symbols-outlined">compress</span>
+</span>
+</div>
+<div class="flex items-center gap-1 text-xs">
+<span class="text-green-500 flex items-center font-bold bg-green-500/10 px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[14px]">trending_flat</span>
+                            مستقر
+                        </span>
+<span class="text-gray-500 mr-2">تحت المراقبة</span>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-xl bg-surface-dark border border-[#392b28] p-5 hover:border-gray-600 transition-colors">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-sm font-medium text-gray-400">الهزات الأرضية</p>
+<h3 class="text-3xl font-bold text-white font-display mt-1">24</h3>
+</div>
+<span class="flex h-10 w-10 items-center justify-center rounded-lg bg-[#392b28] text-gray-300">
+<span class="material-symbols-outlined">landscape</span>
+</span>
+</div>
+<div class="flex items-center gap-1 text-xs">
+<span class="text-gray-400 flex items-center bg-[#392b28] px-1.5 py-0.5 rounded">
+                            آخر 24 ساعة
+                        </span>
+<span class="text-gray-500 mr-2">أقصى قوة: 3.2 M</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 space-y-8">
+<div class="bg-surface-dark border border-[#392b28] rounded-xl p-6">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h3 class="text-xl font-bold text-white">النشاط الزلزالي (RSAM)</h3>
+<p class="text-sm text-gray-400">البيانات الحية لآخر 30 يوم</p>
+</div>
+<select class="bg-[#221310] border border-[#392b28] text-white text-sm rounded-lg focus:ring-primary focus:border-primary block p-2">
+<option>آخر 30 يوم</option>
+<option>آخر 7 أيام</option>
+<option>آخر 24 ساعة</option>
+</select>
+</div>
+<div class="relative h-64 w-full bg-[#221310] rounded-lg border border-[#392b28] p-4 flex flex-col justify-end overflow-hidden">
+<div class="absolute inset-0 p-4 flex flex-col justify-between pointer-events-none">
+<div class="w-full h-px bg-[#392b28]"></div>
+<div class="w-full h-px bg-[#392b28]"></div>
+<div class="w-full h-px bg-[#392b28]"></div>
+<div class="w-full h-px bg-[#392b28]"></div>
+<div class="w-full h-px bg-[#392b28]"></div>
+</div>
+<svg class="absolute inset-x-4 bottom-4 h-[80%] w-[calc(100%-2rem)] z-10 overflow-visible" preserveAspectRatio="none">
+<defs>
+<linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#da2e0b" stop-opacity="0.5"></stop>
+<stop offset="100%" stop-color="#da2e0b" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+<path d="M0,100 Q10,90 20,95 T40,80 T60,60 T80,85 T100,50 T120,40 T140,65 T160,30 T180,20 T200,45 T220,10 T240,35 T260,15 T280,40 T300,20 L300,150 L0,150 Z" fill="url(#chartFill)" stroke="none"></path>
+<path d="M0,100 Q10,90 20,95 T40,80 T60,60 T80,85 T100,50 T120,40 T140,65 T160,30 T180,20 T200,45 T220,10 T240,35 T260,15 T280,40 T300,20" fill="none" stroke="#da2e0b" stroke-width="3" vector-effect="non-scaling-stroke"></path>
+</svg>
+<div class="flex justify-between text-xs text-gray-500 mt-2 z-20 pt-2 border-t border-[#392b28]">
+<span>01/10</span>
+<span>05/10</span>
+<span>10/10</span>
+<span>15/10</span>
+<span>20/10</span>
+<span>25/10</span>
+<span>اليوم</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-dark border border-[#392b28] rounded-xl p-6">
+<h3 class="text-xl font-bold text-white mb-4">التحليل المباشر والتوقعات</h3>
+<div class="prose prose-invert max-w-none text-gray-300">
+<p class="mb-4">
+                                تُشير بيانات <span class="text-primary font-semibold">GNSS</span> الأخيرة إلى استمرار التضخم في الجانب الجنوبي الشرقي للبركان، مما يوحي بتراكم الصهارة في الخزان العلوي. نماذج الذكاء الاصطناعي الخاصة بـ VolcanoPulse تتوقع احتمالية عالية لحدوث انفجار "سترومبولي" خلال الـ 48 ساعة القادمة.
+                            </p>
+<div class="flex flex-col md:flex-row gap-4 my-6">
+<div class="bg-[#221310] p-4 rounded-lg flex-1 border border-[#392b28] border-r-4 border-r-orange-500">
+<h4 class="text-white font-bold mb-1">السيناريو المتوقع</h4>
+<p class="text-sm text-gray-400">انبعاثات رمادية كثيفة مع تدفقات حمم بركانية محدودة باتجاه "فالي ديل بوف".</p>
+</div>
+<div class="bg-[#221310] p-4 rounded-lg flex-1 border border-[#392b28] border-r-4 border-r-green-500">
+<h4 class="text-white font-bold mb-1">توصيات السلامة</h4>
+<p class="text-sm text-gray-400">يُنصح السكان في دائرة نصف قطرها 10 كم بارتداء الأقنعة وتجنب المناطق المنخفضة.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-xl font-bold text-white">الوسائط المباشرة والأقمار الصناعية</h3>
+<a class="text-primary text-sm font-medium hover:underline" href="#">عرض الكل</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-[#221310]">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBodBILRnUnEnxcs1eFnMTe6iKlgI0hJYWMnmE00ovnqTbfFBpZdTW6zWpaqtzPx5jgANJpKi0mX4MwfpdRo9LOtlF-zwZf9VFaTwEX0BfM-uILjgaAIrA_KWLY96qb8AYPyDeTiDagDcKuZXeoCg90KaD06KEgv0Uvy3VkEvD4vt8IogRYhQvv5ocBCjmUgaXI27tHtb_WNmEbet2MI0peeVrIgiWD_i7lalahfAgridZrgYrFVSOs7DXXEnzmYF-6nlmaJKmABgFv');"></div>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">play_circle</span>
+</div>
+<div class="absolute bottom-2 right-2 bg-black/60 px-2 py-1 rounded text-xs text-white">كاميرا حرارية</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-[#221310]">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlg0zH6AbUi9ec40WDMxUlNjPKFWSsQ6YTi1a7DyVuVMsEMqy1AS7zAuNrHde2xAcTLOmD251CSDSKJ2T4Ui2IW5iyRMASwHt4eEOd9ZQbCQPG6AkO2O8EdVzhzj8UpGEtwv3Dji7UBvU1FC-U7v2ja-i_dvM2H9X2Mu4LksJhmSpxSZNd5E0CrmxjP1e0MHU0X4YlYWjKc4qQXYK4326gT6vFk3KAnAi8fus7LMR-E_0aeQkFnOad1mEM5C0yvVWaSok4oTcfgm68');"></div>
+<div class="absolute bottom-2 right-2 bg-black/60 px-2 py-1 rounded text-xs text-white">بث مباشر</div>
+</div>
+<div class="group relative aspect-square overflow-hidden rounded-lg bg-[#221310]">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRmj6wbqyy1Qr4Q-pR9QseQCD5vpYHNfEces53SsTBaOzLLZbA7UMpxUqVx8IT8RSTMlcl-nY2L-deO_sL86iSXKzkfLBdr0e1pcee1hEbuQ1LFiE27Ise4ja7N2x8VRmL9JDgVm3W6yRFXVgJZv8CUBkE43eJgcy5bYqTboO5Jv1v5zTsmopb-xsd2XLUH-JP2VxOPEnP5qY6LGwvxFUw267TIfU5i6X0QPS1ELTVgiQXcIhU0kh93uq21q6Ama9Pls6Kox3zzzDB');"></div>
+<div class="absolute bottom-2 right-2 bg-black/60 px-2 py-1 rounded text-xs text-white">سجلات زلزالية</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 space-y-8">
+<div class="bg-surface-dark border border-[#392b28] rounded-xl overflow-hidden">
+<div class="relative h-64 w-full bg-gray-800">
+<div class="h-full w-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjR2Lu_J8eYyGGQz0sTToutERcIg4o7aiEQ7rtyBiF6rBMSByK67tkjx4WGCXuDsUS6ibQHhUBUUOa4suy4HZlzuEKh2G4eL8Cl8-KPe3rY6T_VdMT8bmr_wJAVYrCR2pAlbJrR3q_APiSBCgRS2h8ctguqHfeDRkDlaPzCtYhDx29vN3aZI37zDGAQhs4e7IwZJGJfrtuwK8Y6jC1eLGYPGKYMCAEopZYqD-dKu_PdmPhL0z1myCXF3h0A8eWbaFadEXFoUleexc3');"></div>
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="relative flex h-6 w-6">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-6 w-6 bg-primary border-2 border-white"></span>
+</div>
+<span class="mt-1 bg-black/80 text-white text-xs px-2 py-0.5 rounded shadow-lg">مركز الفوهة</span>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-bold text-white mb-2">المناطق المتأثرة</h4>
+<div class="space-y-2">
+<div class="flex justify-between text-sm">
+<span class="text-gray-400">كاتانيا (30km)</span>
+<span class="text-green-500">خطر منخفض</span>
+</div>
+<div class="w-full bg-[#221310] rounded-full h-1.5">
+<div class="bg-green-500 h-1.5 rounded-full" style="width: 20%"></div>
+</div>
+<div class="flex justify-between text-sm pt-2">
+<span class="text-gray-400">زارقوانة (12km)</span>
+<span class="text-orange-500">خطر متوسط</span>
+</div>
+<div class="w-full bg-[#221310] rounded-full h-1.5">
+<div class="bg-orange-500 h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-dark border border-[#392b28] rounded-xl p-6">
+<h3 class="font-bold text-white mb-4">بيانات البركان</h3>
+<ul class="space-y-4">
+<li class="flex justify-between items-center pb-3 border-b border-[#392b28]">
+<span class="text-gray-400 text-sm">النوع</span>
+<span class="text-white text-sm font-medium">طبقي (Stratovolcano)</span>
+</li>
+<li class="flex justify-between items-center pb-3 border-b border-[#392b28]">
+<span class="text-gray-400 text-sm">الارتفاع</span>
+<span class="text-white text-sm font-medium">3,357 متر</span>
+</li>
+<li class="flex justify-between items-center pb-3 border-b border-[#392b28]">
+<span class="text-gray-400 text-sm">آخر ثوران كبير</span>
+<span class="text-white text-sm font-medium">21 مايو 2023</span>
+</li>
+<li class="flex justify-between items-center pb-3 border-b border-[#392b28]">
+<span class="text-gray-400 text-sm">مؤشر الانفجار (VEI)</span>
+<span class="text-white text-sm font-medium">2 (الحالي)</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-gray-400 text-sm">الرصد بواسطة</span>
+<span class="text-white text-sm font-medium">INGV, USGS</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-dark border border-[#392b28] rounded-xl p-6">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-bold text-white">سجل التنبيهات</h3>
+<span class="material-symbols-outlined text-gray-400">history</span>
+</div>
+<div class="space-y-6 relative before:absolute before:inset-0 before:mr-2 before:h-full before:w-px before:bg-[#392b28]">
+<div class="relative pr-6">
+<div class="absolute top-1 right-0 h-4 w-4 rounded-full bg-red-500 border-2 border-[#221310]"></div>
+<p class="text-xs text-gray-500 mb-1">اليوم، 09:30 ص</p>
+<p class="text-sm text-white font-medium">ارتفاع حاد في انبعاثات الرماد</p>
+<p class="text-xs text-gray-400 mt-1">تم رصد سحابة رماد بارتفاع 4.5 كم.</p>
+</div>
+<div class="relative pr-6">
+<div class="absolute top-1 right-0 h-4 w-4 rounded-full bg-orange-500 border-2 border-[#221310]"></div>
+<p class="text-xs text-gray-500 mb-1">أمس، 06:15 م</p>
+<p class="text-sm text-white font-medium">تغيير مستوى التحذير إلى برتقالي</p>
+<p class="text-xs text-gray-400 mt-1">بناءً على نشاط الهزات الأرضية المتزايد.</p>
+</div>
+<div class="relative pr-6">
+<div class="absolute top-1 right-0 h-4 w-4 rounded-full bg-gray-500 border-2 border-[#221310]"></div>
+<p class="text-xs text-gray-500 mb-1">20 أكتوبر، 11:00 ص</p>
+<p class="text-sm text-white font-medium">تقرير أسبوعي روتيني</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="border-t border-[#392b28] bg-background-dark py-8">
+<div class="container mx-auto px-4 md:px-6 text-center text-gray-500 text-sm">
+<p>© 2023 VolcanoPulse. جميع البيانات مستمدة من USGS و NASA.</p>
+<div class="flex justify-center gap-4 mt-4">
+<a class="hover:text-primary transition-colors" href="#">سياسة الخصوصية</a>
+<a class="hover:text-primary transition-colors" href="#">شروط الاستخدام</a>
+<a class="hover:text-primary transition-colors" href="#">اتصل بنا</a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
